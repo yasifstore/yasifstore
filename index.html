@@ -44,120 +44,122 @@
     <div id="app"></div>
 
     <script>
-        // --- DATA PRODUK ---
+        // --- DATA PRODUK (SUDAH DIPERBAIKI ID-NYA AGAR TIDAK BENTROK) ---
         const products = [
-        { id: "1", name: "Kopi Kenangan Mantan", originalPrice: 19000, promoPrice: 12500, brand: "Kopi Kenangan", image: "https://food-cms.grab.com/compressed_webp/items/IDITE20250812051422019174/detail/5b10a373_2aec27ffffdc9e8.webp" },
-        { id: "2", name: "Toffee Nut Late", originalPrice: 19000, promoPrice: 12500, brand: "Kopi Kenangan", image: "https://food-cms.grab.com/compressed_webp/items/IDITE20251123181917021062/detail/bd57be8d_ab0cbd37907d628.webp" },
-        { id: "3", name: "Toffee Nut Aren Latte", originalPrice: 21000, promoPrice: 13500, brand: "Kopi Kenangan", image: "https://food-cms.grab.com/compressed_webp/items/IDITE20251123135412014443/detail/8d36bd27_660f8c0a63880f8.webp" },
-        { id: "4", name: "Toffee Nut Oat Latte", originalPrice: 22000, promoPrice: 14000, brand: "Kopi Kenangan", image: "https://food-cms.grab.com/compressed_webp/items/IDITE20251123135412029037/detail/b5c7d7ee_9bb39c2260fdaec.webp" },
-        { id: "5", name: "Dubai Pistachio Latte", originalPrice: 26000, promoPrice: 16000, brand: "Kopi Kenangan", image: "https://food-cms.grab.com/compressed_webp/items/IDITE20251123181919042338/detail/bdb02f10_8e13b7cc32c86ec.webp" },
-        { id: "6", name: "Pistachio Latte", originalPrice: 22000, promoPrice: 14000, brand: "Kopi Kenangan", image: "https://food-cms.grab.com/compressed_webp/items/IDITE20251123181919069865/detail/8e239ba7_ae878f8b5c556f3.webp" },
-        { id: "7", name: "Pistachio Aren Latte", originalPrice: 22000, promoPrice: 14000, brand: "Kopi Kenangan", image: "https://food-cms.grab.com/compressed_webp/items/IDITE20251123181919056205/detail/924b3315_c4b1b6cce555736.webp" },
-        { id: "8", name: "Cafe Malt Latte", originalPrice: 19000, promoPrice: 12500, brand: "Kopi Kenangan", image: "" },
-        { id: "9", name: "Caramel Latte", originalPrice: 23000, promoPrice: 14500, brand: "Kopi Kenangan", image: "https://food-cms.grab.com/compressed_webp/items/IDITE20250630193126060859/detail/e9ddffc4_ecba1398e652979.webp" },
-        { id: "10", name: "Dua Shot Iced Shaken", originalPrice: 28000, promoPrice: 17000, brand: "Kopi Kenangan", image: "https://food-cms.grab.com/compressed_webp/items/IDITE20250630193128078742/detail/ee46dfe5_590f16c24cee913.webp" },
-        { id: "11", name: "Caramel Macchiato", originalPrice: 28000, promoPrice: 17000, brand: "Kopi Kenangan", image: "https://food-cms.grab.com/compressed_webp/items/IDITE20250812051421027652/detail/ae93796d_404b2968cc0722e.webp" },
-        { id: "12", name: "Hazelnut Latte", originalPrice: 26000, promoPrice: 16000, brand: "Kopi Kenangan", image: "https://food-cms.grab.com/compressed_webp/items/IDITE20250630193125023318/detail/f2220ce9_a2140e6cbaf588b.webp" },
-        { id: "13", name: "Kopi Susu Black Aren", originalPrice: 21000, promoPrice: 13500, brand: "Kopi Kenangan", image: "https://food-cms.grab.com/compressed_webp/items/IDITE20250630193125060247/detail/0ff58d8c_63797561bee87b9.webp" },
-        { id: "14", name: "Matcha Espresso", originalPrice: 26000, promoPrice: 16000, brand: "Kopi Kenangan", image: "https://food-cms.grab.com/compressed_webp/items/IDITE20250630193127069282/detail/c7fbb5f5_127f022392f087e.webp" },
-        { id: "15", name: "Mocha Latte", originalPrice: 28000, promoPrice: 17000, brand: "Kopi Kenangan", image: "https://food-cms.grab.com/compressed_webp/items/IDITE20250630193128023892/detail/acd94dd5_8e866cccfaca696.webp" },
-        { id: "16", name: "Vanilla Latte", originalPrice: 26000, promoPrice: 16000, brand: "Kopi Kenangan", image: "https://food-cms.grab.com/compressed_webp/items/IDITE20250630193130027096/detail/e6f61022_eda82d03ffa2627.webp" },
-        { id: "17", name: "Avocado Coffee", originalPrice: 28000, promoPrice: 17000, brand: "Kopi Kenangan", image: "https://food-cms.grab.com/compressed_webp/items/IDITE20250703074725012544/detail/4ceae86b_c9778ae7145062a.webp" },
-        { id: "18", name: "Spanish Latte", originalPrice: 19000, promoPrice: 12500, brand: "Kopi Kenangan", image: "https://food-cms.grab.com/compressed_webp/items/IDITE20250812051421018408/detail/4983790e_326fedae12ba368.webp" },
-        { id: "19", name: "Creamy Aren Latte", originalPrice: 22000, promoPrice: 14000, brand: "Kopi Kenangan", image: "https://food-cms.grab.com/compressed_webp/items/IDITE20250701081956023314/detail/55494d68_fc905469e7d1ef2.webp" },
-        { id: "20", name: "Butterscotch Aren Latte", originalPrice: 20000, promoPrice: 13000, brand: "Kopi Kenangan", image: "https://food-cms.grab.com/compressed_webp/items/IDITE20250630193127015676/detail/ad0dbfe5_cc6de456af98b49.webp" },
-        { id: "21", name: "Butterscotch Sea Salt latte", originalPrice: 25000, promoPrice: 15500, brand: "Kopi Kenangan", image: "https://food-cms.grab.com/compressed_webp/items/IDITE20250630193129017472/detail/a3ebb563_895267a518f2978.webp" },
-        { id: "22", name: "Americano", originalPrice: 17000, promoPrice: 11500, brand: "Kopi Kenangan", image: "https://food-cms.grab.com/compressed_webp/items/IDITE20250630193130067701/detail/a67cc828_bfab17b25c46ffa.webp" },
-        { id: "23", name: "Cappuccino", originalPrice: 22000, promoPrice: 14000, brand: "Kopi Kenangan", image: "https://food-cms.grab.com/compressed_webp/items/IDITE20250630193131040855/detail/8e5c4d82_c25681b0cfec532.webp" },
-        { id: "24", name: "Latte", originalPrice: 22000, promoPrice: 14000, brand: "Kopi Kenangan", image: "https://food-cms.grab.com/compressed_webp/items/IDITE20250630193132012856/detail/4a8f13ae_00ff4874930fcd7.webp" },
-        { id: "25", name: "Toffe Nut Choco Macchiato", originalPrice: 22000, promoPrice: 14000, brand: "Kopi Kenangan", image: "" },
-        { id: "26", name: "butterscotch Sea Salt Crumble", originalPrice: 22000, promoPrice: 14000, brand: "Kopi Kenangan", image: "https://i.gojekapi.com/darkroom/gofood-indonesia/v2/images/uploads/c035cfad-b164-4982-86e1-cdc7a33595d5_7be23137-13e7-5f63-ccc8-cad9d4e77421.png?auto=format" },
-        { id: "27", name: "Milk Oreo Crumble", originalPrice: 26000, promoPrice: 16000, brand: "Kopi Kenangan", image: "https://i.gojekapi.com/darkroom/gofood-indonesia/v2/images/uploads/a15fd431-d33f-45d2-9524-6eb6d914489f_31770136-f420-e0eb-6c9e-080daa295cd6.png?auto=format" },
-        { id: "28", name: "Babyccino", originalPrice: 19000, promoPrice: 12500, brand: "Kopi Kenangan", image: "" },
-        { id: "29", name: "Dubai Pistachio Chocolate", originalPrice: 27000, promoPrice: 16500, brand: "Kopi Kenangan", image: "https://i.gojekapi.com/darkroom/gofood-indonesia/v2/images/uploads/4ff16f63-0cb6-4243-a2fc-993017def44a_efb480ca-31a1-8fd1-8a35-e8e113d73010.png?auto=format" },
-        { id: "30", name: "Fresh Lemonade", originalPrice: 17000, promoPrice: 11500, brand: "Kopi Kenangan", image: "" },
-        { id: "31", name: "Huzelnut Choco Milk Tea", originalPrice: 22000, promoPrice: 14000, brand: "Kopi Kenangan", image: "" },
-        { id: "32", name: "Avocado Caramel", originalPrice: 28000, promoPrice: 17000, brand: "Kopi Kenangan", image: "https://food-cms.grab.com/compressed_webp/items/IDITE20250630193147016654/detail/559de687_d0ce7a477821c37.webp" },
-        { id: "33", name: "Avocado Milk", originalPrice: 24000, promoPrice: 15000, brand: "Kopi Kenangan", image: "https://food-cms.grab.com/compressed_webp/items/IDITE20250630193148086543/detail/fd59074d_5395c2fe71dbaa7.webp" },
-        { id: "34", name: "Caramel Dutch Choco", originalPrice: 28000, promoPrice: 17000, brand: "Kopi Kenangan", image: "https://food-cms.grab.com/compressed_webp/items/IDITE20250630193147027174/detail/4f5681cb_210431f9a61ba2a.webp" },
-        { id: "35", name: "Dutch Chocolate", originalPrice: 26000, promoPrice: 16000, brand: "Kopi Kenangan", image: "https://food-cms.grab.com/compressed_webp/items/IDITE20250630193147045449/detail/0df98805_89002bfb5c998ee.webp" },
-        { id: "36", name: "Hazelnut Dutch Choco", originalPrice: 28000, promoPrice: 17000, brand: "Kopi Kenangan", image: "https://food-cms.grab.com/compressed_webp/items/IDITE20250630193150086778/detail/eeb3ea66_480ec21d725419f.webp" },
-        { id: "37", name: "Lemon Black Tea", originalPrice: 17000, promoPrice: 11500, brand: "Kopi Kenangan", image: "https://food-cms.grab.com/compressed_webp/items/IDITE20250630193146074669/detail/d00f8fc0_559cbb576177a27.webp" },
-        { id: "38", name: "Kenangan Milk Tea", originalPrice: 21000, promoPrice: 13500, brand: "Kopi Kenangan", image: "https://food-cms.grab.com/compressed_webp/items/IDITE20250630193148039827/detail/913c22df_7a5d83a501603ae.webp" },
-        { id: "39", name: "Milo Dinosaurus", originalPrice: 23000, promoPrice: 14500, brand: "Kopi Kenangan", image: "https://food-cms.grab.com/compressed_webp/items/IDITE20250630193150052617/detail/a01a6a96_8bdd0e248c5d36d.webp" },
-        { id: "40", name: "Oreo Shake", originalPrice: 26000, promoPrice: 16000, brand: "Kopi Kenangan", image: "https://food-cms.grab.com/compressed_webp/items/IDITE20250630193149036011/detail/f91d4201_feb994df04c4453.webp" },
-        { id: "41", name: "Raspberry Hibiscus", originalPrice: 20000, promoPrice: 13000, brand: "Kopi Kenangan", image: "https://food-cms.grab.com/compressed_webp/items/IDITE20250630193149052378/detail/7ba226ae_3d05dece9480be2.webp" },
-        { id: "42", name: "Susu Grass Jelly", originalPrice: 24000, promoPrice: 15000, brand: "Kopi Kenangan", image: "https://food-cms.grab.com/compressed_webp/items/IDITE20250630193149060970/detail/0c699bd8_168caaa10f5f95c.webp" },
-        { id: "43", name: "Thai Tea", originalPrice: 22000, promoPrice: 14000, brand: "Kopi Kenangan", image: "https://food-cms.grab.com/compressed_webp/items/IDITE20250630193146058165/detail/857d2fcd_29afeecf07a6c0a.webp" },
-        { id: "44", name: "Matcha Latte", originalPrice: 25000, promoPrice: 15500, brand: "Kopi Kenangan", image: "https://food-cms.grab.com/compressed_webp/items/IDITE20250630193148076389/detail/73f28968_165e37fca0da957.webp" },
-        { id: "45", name: "Oatside Kopi Kenangan Mantan", originalPrice: 22000, promoPrice: 14000, brand: "Kopi Kenangan", image: "https://food-cms.grab.com/compressed_webp/items/IDITE20250630193109043175/detail/796b24e6_616d14a5728d1ff.webp" },
-        { id: "46", name: "Oatside Latte", originalPrice: 25000, promoPrice: 15500, brand: "Kopi Kenangan", image: "https://food-cms.grab.com/compressed_webp/items/IDITE20250630193109060320/detail/ced81934_3fd8d7f1e3af821.webp" },
-        { id: "47", name: "Oatsside Matcha Latte", originalPrice: 25000, promoPrice: 15500, brand: "Kopi Kenangan", image: "https://food-cms.grab.com/compressed_webp/items/IDITE20250630193109021326/detail/281a5a15_dbfc6e9ff734f3c.webp" },
-        { id: "48", name: "Pistachio Frappe", originalPrice: 32000, promoPrice: 19000, brand: "Kopi Kenangan", image: "https://food-cms.grab.com/compressed_webp/items/IDITE20250922193527045371/detail/516352d3_47da80764322449.webp" },
-        { id: "49", name: "Butterscotch Kenangan Frape", originalPrice: 30000, promoPrice: 18000, brand: "Kopi Kenangan", image: "https://food-cms.grab.com/compressed_webp/items/IDITE20250701082015016768/detail/63a3f71e_c158a0c20395877.webp" },
-        { id: "50", name: "Matcha Kenangan Frappe", originalPrice: 32000, promoPrice: 19000, brand: "Kopi Kenangan", image: "https://food-cms.grab.com/compressed_webp/items/IDITE20250701094127019837/detail/0f153e11_0676d2b60eddce1.webp" },
-        { id: "51", name: "Kopi Kenangan Mantan Frappe", originalPrice: 30000, promoPrice: 18000, brand: "Kopi Kenangan", image: "https://food-cms.grab.com/compressed_webp/items/IDITE20250701082014010059/detail/9c56be81_1e18627861ae747.webp" },
-        { id: "52", name: "Vanilla Kenangan Frappe", originalPrice: 25000, promoPrice: 15500, brand: "Kopi Kenangan", image: "https://food-cms.grab.com/compressed_webp/items/IDITE20250701082014035176/detail/f4c784b7_8915c14d7b17582.webp" },
-        { id: "53", name: "Dutch Choco Kenangan Frappe", originalPrice: 29000, promoPrice: 17500, brand: "Kopi Kenangan", image: "https://food-cms.grab.com/compressed_webp/items/IDITE20250630193136043965/detail/ea2dbc86_126e1df53b45103.webp" },
-        { id: "54", name: "Bambang Choco Cheese Toast", originalPrice: 17000, promoPrice: 11500, brand: "Kopi Kenangan", image: "https://i.gojekapi.com/darkroom/gofood-indonesia/v2/images/uploads/66499e2e-b9c8-42f4-a32e-296fc8639792_9bcefd8c-c6d2-0bf3-cd8b-d58b53b7c107.png?auto=format" },
-        { id: "55", name: "Adam Ayam Toast", originalPrice: 19000, promoPrice: 12500, brand: "Kopi Kenangan", image: "https://i.gojekapi.com/darkroom/gofood-indonesia/v2/images/uploads/5401f48a-01c5-4981-88aa-f3c1724e75e2_fb8f8b0c-b019-3c84-87a5-753cb136b32f.png?auto=format" },
-        { id: "56", name: "Wahyu Sapi Toast", originalPrice: 19000, promoPrice: 12500, brand: "Kopi Kenangan", image: "https://i.gojekapi.com/darkroom/gofood-indonesia/v2/images/uploads/605c7f65-d7ec-4568-9ea0-3650bb92546e_f8688c41-22fd-a3a2-836f-7491a183eda0.png?auto=format" },
-        { id: "57", name: "Butter Croissant", originalPrice: 15000, promoPrice: 10500, brand: "Kopi Kenangan", image: "https://i.gojekapi.com/darkroom/gofood-indonesia/v2/images/uploads/db92aac9-45b6-4d34-8c80-8376eaaf873c_9d55c3c9-52d8-ba1d-93f0-d3463fccf78c.png?auto=format" },
-        { id: "58", name: "Chocolate Croissant", originalPrice: 19000, promoPrice: 12500, brand: "Kopi Kenangan", image: "https://i.gojekapi.com/darkroom/gofood-indonesia/v2/images/uploads/76d0d5df-9a62-49fa-b65e-8ca8d63a6a4d_91b9e718-9857-2d5c-644a-f5bc8624ebeb.png?auto=format" },
-        { id: "59", name: "Chocolate Donut", originalPrice: 13000, promoPrice: 9500, brand: "Kopi Kenangan", image: "" },
-        { id: "60", name: "Sugar Donut", originalPrice: 10000, promoPrice: 8000, brand: "Kopi Kenangan", image: "" },
-        { id: "61", name: "Cheese Donut", originalPrice: 15000, promoPrice: 10500, brand: "Kopi Kenangan", image: "" },
-        { id: "62", name: "Roti Coklat Klasik", originalPrice: 9000, promoPrice: 7500, brand: "Kopi Kenangan", image: "https://i.gojekapi.com/darkroom/gofood-indonesia/v2/images/uploads/a638a121-fe33-46e8-8a90-abd75706c1ec_9e12c70d-aa2b-5e0e-aebe-70e0ea1ebfd9.png?auto=format" },
-        { id: "63", name: "Roti Susu Manis", originalPrice: 9000, promoPrice: 7500, brand: "Kopi Kenangan", image: "https://i.gojekapi.com/darkroom/gofood-indonesia/v2/images/uploads/396da488-0f99-4e03-9e4d-a60c2c979074_33396a34-db50-f763-4f98-7ec86de19e27.png?auto=format" },
-        { id: "64", name: "Roti Keju Manis", originalPrice: 12000, promoPrice: 9000, brand: "Kopi Kenangan", image: "https://i.gojekapi.com/darkroom/gofood-indonesia/v2/images/uploads/72acff80-65d0-4ccb-8018-c6abb90e76da_4d56bebd-84b0-00e6-34d0-2a7f4bbd7003.png?auto=format" },
-        { id: "65", name: "Roti Srikaya", originalPrice: 15000, promoPrice: 10500, brand: "Kopi Kenangan", image: "https://i.gojekapi.com/darkroom/gofood-indonesia/v2/images/uploads/bb7f1969-adf1-4402-b565-871903609693_dbf90a98-0acd-2f08-0505-b83f77186496.png?auto=format" },
-        { id: "66", name: "Choco Chip Cookies", originalPrice: 14000, promoPrice: 10000, brand: "Kopi Kenangan", image: "https://i.gojekapi.com/darkroom/gofood-indonesia/v2/images/uploads/26fda6fc-f6aa-4fc0-b6e6-304be6c3c38a_e4d2e3fc-27e8-c6b3-8746-363e0e135588.png?auto=format" },
-        { id: "67", name: "Join the Dark Side Cookie", originalPrice: 21000, promoPrice: 13500, brand: "Kopi Kenangan", image: "https://i.gojekapi.com/darkroom/gofood-indonesia/v2/images/uploads/abce5af0-e7d7-4699-b2ab-efaed6f3ac45_9e36632a-bf36-8360-39f7-91b3c733e5d4.png?auto=format" },
-        { id: "68", name: "Friend Chip Cookie", originalPrice: 17000, promoPrice: 11500, brand: "Kopi Kenangan", image: "https://i.gojekapi.com/darkroom/gofood-indonesia/v2/images/uploads/056f4a54-9897-438c-8439-8924ce1aec37_31f64dbd-4d3f-10a9-f95e-ecc735c98dba.png?auto=format" },
-        { id: "69", name: "Pasta Mentai", originalPrice: 24000, promoPrice: 15000, brand: "Kopi Kenangan", image: "https://i.gojekapi.com/darkroom/gofood-indonesia/v2/images/uploads/fb629113-34ef-4ea0-923f-9f6a81681b9b_cfc504ae-2cd8-641d-a09d-b8e8426e43bf.png?auto=format" },
-        { id: "70", name: "Pasta Indoghetti", originalPrice: 22000, promoPrice: 14000, brand: "Kopi Kenangan", image: "https://food-cms.grab.com/compressed_webp/items/IDITE20251212052608012601/detail/505f058b_303643db99c0fa4.webp" },
-        { id: "71", name: "Chicken Japanese Curry  Rice", originalPrice: 24000, promoPrice: 15000, brand: "Kopi Kenangan", image: "https://food-cms.grab.com/compressed_webp/items/IDITE20251212052609023189/detail/80161efd_ba6140742e7b7b3.webp" },
-        { id: "72", name: "Chicken Pad Kra Pao Rice", originalPrice: 22000, promoPrice: 14000, brand: "Kopi Kenangan", image: "https://food-cms.grab.com/compressed_webp/items/IDITE20251212052608024725/detail/0cd18658_ece4248728d730c.webp" },
-        { id: "73", name: "Donut Almond", originalPrice: 13000, promoPrice: 9500, brand: "Kopi Kenangan", image: "https://food-cms.grab.com/compressed_webp/items/IDITE20251026192736057926/detail/64396cd2_5c4c2f7b87a6748.webp" },
-        { id: "74", name: "Sandwich Smoked Beef and Cheese", originalPrice: 21000, promoPrice: 13500, brand: "Kopi Kenangan", image: "https://food-cms.grab.com/compressed_webp/items/IDITE20251119052648012618/detail/d2d27f4c_18e44164b148568.webp" },
-        { id: "75", name: "Sandwich Chicken Tartar", originalPrice: 21000, promoPrice: 13500, brand: "Kopi Kenangan", image: "https://food-cms.grab.com/compressed_webp/items/IDITE20251119052649019190/detail/653da70a_2ddbbcee926d573.webp" },
-        { id: "76", name: "Canele Original", originalPrice: 13000, promoPrice: 9500, brand: "Kopi Kenangan", image: "https://food-cms.grab.com/compressed_webp/items/IDITE20251211192434026758/detail/f3748a41_319e31bd7ec6b3f.webp" },
-        { id: "77", name: "Canele Toffee Nut Crumble", originalPrice: 15000, promoPrice: 10500, brand: "Kopi Kenangan", image: "https://food-cms.grab.com/compressed_webp/items/IDITE20251211192433012142/detail/94793536_6425ab37b5ac942.webp" },
-        { id: "78", name: "Donut Abon", originalPrice: 13000, promoPrice: 9500, brand: "Kopi Kenangan", image: "" },
-        { id: "79", name: "Croissant Abon", originalPrice: 17000, promoPrice: 11500, brand: "Kopi Kenangan", image: "https://food-cms.grab.com/compressed_webp/items/IDITE20251211192433021856/detail/9c7d5034_00dce96fec491e6.webp" },
+            // --- KOPI KENANGAN (ID 1 - 99) ---
+            { id: "1", name: "Kopi Kenangan Mantan", originalPrice: 19000, promoPrice: 12500, brand: "Kopi Kenangan", image: "https://food-cms.grab.com/compressed_webp/items/IDITE20250812051422019174/detail/5b10a373_2aec27ffffdc9e8.webp" },
+            { id: "2", name: "Toffee Nut Late", originalPrice: 19000, promoPrice: 12500, brand: "Kopi Kenangan", image: "https://food-cms.grab.com/compressed_webp/items/IDITE20251123181917021062/detail/bd57be8d_ab0cbd37907d628.webp" },
+            { id: "3", name: "Toffee Nut Aren Latte", originalPrice: 21000, promoPrice: 13500, brand: "Kopi Kenangan", image: "https://food-cms.grab.com/compressed_webp/items/IDITE20251123135412014443/detail/8d36bd27_660f8c0a63880f8.webp" },
+            { id: "4", name: "Toffee Nut Oat Latte", originalPrice: 22000, promoPrice: 14000, brand: "Kopi Kenangan", image: "https://food-cms.grab.com/compressed_webp/items/IDITE20251123135412029037/detail/b5c7d7ee_9bb39c2260fdaec.webp" },
+            { id: "5", name: "Dubai Pistachio Latte", originalPrice: 26000, promoPrice: 16000, brand: "Kopi Kenangan", image: "https://food-cms.grab.com/compressed_webp/items/IDITE20251123181919042338/detail/bdb02f10_8e13b7cc32c86ec.webp" },
+            { id: "6", name: "Pistachio Latte", originalPrice: 22000, promoPrice: 14000, brand: "Kopi Kenangan", image: "https://food-cms.grab.com/compressed_webp/items/IDITE20251123181919069865/detail/8e239ba7_ae878f8b5c556f3.webp" },
+            { id: "7", name: "Pistachio Aren Latte", originalPrice: 22000, promoPrice: 14000, brand: "Kopi Kenangan", image: "https://food-cms.grab.com/compressed_webp/items/IDITE20251123181919056205/detail/924b3315_c4b1b6cce555736.webp" },
+            { id: "8", name: "Cafe Malt Latte", originalPrice: 19000, promoPrice: 12500, brand: "Kopi Kenangan", image: "" },
+            { id: "9", name: "Caramel Latte", originalPrice: 23000, promoPrice: 14500, brand: "Kopi Kenangan", image: "https://food-cms.grab.com/compressed_webp/items/IDITE20250630193126060859/detail/e9ddffc4_ecba1398e652979.webp" },
+            { id: "10", name: "Dua Shot Iced Shaken", originalPrice: 28000, promoPrice: 17000, brand: "Kopi Kenangan", image: "https://food-cms.grab.com/compressed_webp/items/IDITE20250630193128078742/detail/ee46dfe5_590f16c24cee913.webp" },
+            { id: "11", name: "Caramel Macchiato", originalPrice: 28000, promoPrice: 17000, brand: "Kopi Kenangan", image: "https://food-cms.grab.com/compressed_webp/items/IDITE20250812051421027652/detail/ae93796d_404b2968cc0722e.webp" },
+            { id: "12", name: "Hazelnut Latte", originalPrice: 26000, promoPrice: 16000, brand: "Kopi Kenangan", image: "https://food-cms.grab.com/compressed_webp/items/IDITE20250630193125023318/detail/f2220ce9_a2140e6cbaf588b.webp" },
+            { id: "13", name: "Kopi Susu Black Aren", originalPrice: 21000, promoPrice: 13500, brand: "Kopi Kenangan", image: "https://food-cms.grab.com/compressed_webp/items/IDITE20250630193125060247/detail/0ff58d8c_63797561bee87b9.webp" },
+            { id: "14", name: "Matcha Espresso", originalPrice: 26000, promoPrice: 16000, brand: "Kopi Kenangan", image: "https://food-cms.grab.com/compressed_webp/items/IDITE20250630193127069282/detail/c7fbb5f5_127f022392f087e.webp" },
+            { id: "15", name: "Mocha Latte", originalPrice: 28000, promoPrice: 17000, brand: "Kopi Kenangan", image: "https://food-cms.grab.com/compressed_webp/items/IDITE20250630193128023892/detail/acd94dd5_8e866cccfaca696.webp" },
+            { id: "16", name: "Vanilla Latte", originalPrice: 26000, promoPrice: 16000, brand: "Kopi Kenangan", image: "https://food-cms.grab.com/compressed_webp/items/IDITE20250630193130027096/detail/e6f61022_eda82d03ffa2627.webp" },
+            { id: "17", name: "Avocado Coffee", originalPrice: 28000, promoPrice: 17000, brand: "Kopi Kenangan", image: "https://food-cms.grab.com/compressed_webp/items/IDITE20250703074725012544/detail/4ceae86b_c9778ae7145062a.webp" },
+            { id: "18", name: "Spanish Latte", originalPrice: 19000, promoPrice: 12500, brand: "Kopi Kenangan", image: "https://food-cms.grab.com/compressed_webp/items/IDITE20250812051421018408/detail/4983790e_326fedae12ba368.webp" },
+            { id: "19", name: "Creamy Aren Latte", originalPrice: 22000, promoPrice: 14000, brand: "Kopi Kenangan", image: "https://food-cms.grab.com/compressed_webp/items/IDITE20250701081956023314/detail/55494d68_fc905469e7d1ef2.webp" },
+            { id: "20", name: "Butterscotch Aren Latte", originalPrice: 20000, promoPrice: 13000, brand: "Kopi Kenangan", image: "https://food-cms.grab.com/compressed_webp/items/IDITE20250630193127015676/detail/ad0dbfe5_cc6de456af98b49.webp" },
+            { id: "21", name: "Butterscotch Sea Salt latte", originalPrice: 25000, promoPrice: 15500, brand: "Kopi Kenangan", image: "https://food-cms.grab.com/compressed_webp/items/IDITE20250630193129017472/detail/a3ebb563_895267a518f2978.webp" },
+            { id: "22", name: "Americano", originalPrice: 17000, promoPrice: 11500, brand: "Kopi Kenangan", image: "https://food-cms.grab.com/compressed_webp/items/IDITE20250630193130067701/detail/a67cc828_bfab17b25c46ffa.webp" },
+            { id: "23", name: "Cappuccino", originalPrice: 22000, promoPrice: 14000, brand: "Kopi Kenangan", image: "https://food-cms.grab.com/compressed_webp/items/IDITE20250630193131040855/detail/8e5c4d82_c25681b0cfec532.webp" },
+            { id: "24", name: "Latte", originalPrice: 22000, promoPrice: 14000, brand: "Kopi Kenangan", image: "https://food-cms.grab.com/compressed_webp/items/IDITE20250630193132012856/detail/4a8f13ae_00ff4874930fcd7.webp" },
+            { id: "25", name: "Toffe Nut Choco Macchiato", originalPrice: 22000, promoPrice: 14000, brand: "Kopi Kenangan", image: "" },
+            { id: "26", name: "butterscotch Sea Salt Crumble", originalPrice: 22000, promoPrice: 14000, brand: "Kopi Kenangan", image: "https://i.gojekapi.com/darkroom/gofood-indonesia/v2/images/uploads/c035cfad-b164-4982-86e1-cdc7a33595d5_7be23137-13e7-5f63-ccc8-cad9d4e77421.png?auto=format" },
+            { id: "27", name: "Milk Oreo Crumble", originalPrice: 26000, promoPrice: 16000, brand: "Kopi Kenangan", image: "https://i.gojekapi.com/darkroom/gofood-indonesia/v2/images/uploads/a15fd431-d33f-45d2-9524-6eb6d914489f_31770136-f420-e0eb-6c9e-080daa295cd6.png?auto=format" },
+            { id: "28", name: "Babyccino", originalPrice: 19000, promoPrice: 12500, brand: "Kopi Kenangan", image: "" },
+            { id: "29", name: "Dubai Pistachio Chocolate", originalPrice: 27000, promoPrice: 16500, brand: "Kopi Kenangan", image: "https://i.gojekapi.com/darkroom/gofood-indonesia/v2/images/uploads/4ff16f63-0cb6-4243-a2fc-993017def44a_efb480ca-31a1-8fd1-8a35-e8e113d73010.png?auto=format" },
+            { id: "30", name: "Fresh Lemonade", originalPrice: 17000, promoPrice: 11500, brand: "Kopi Kenangan", image: "" },
+            { id: "31", name: "Huzelnut Choco Milk Tea", originalPrice: 22000, promoPrice: 14000, brand: "Kopi Kenangan", image: "" },
+            { id: "32", name: "Avocado Caramel", originalPrice: 28000, promoPrice: 17000, brand: "Kopi Kenangan", image: "https://food-cms.grab.com/compressed_webp/items/IDITE20250630193147016654/detail/559de687_d0ce7a477821c37.webp" },
+            { id: "33", name: "Avocado Milk", originalPrice: 24000, promoPrice: 15000, brand: "Kopi Kenangan", image: "https://food-cms.grab.com/compressed_webp/items/IDITE20250630193148086543/detail/fd59074d_5395c2fe71dbaa7.webp" },
+            { id: "34", name: "Caramel Dutch Choco", originalPrice: 28000, promoPrice: 17000, brand: "Kopi Kenangan", image: "https://food-cms.grab.com/compressed_webp/items/IDITE20250630193147027174/detail/4f5681cb_210431f9a61ba2a.webp" },
+            { id: "35", name: "Dutch Chocolate", originalPrice: 26000, promoPrice: 16000, brand: "Kopi Kenangan", image: "https://food-cms.grab.com/compressed_webp/items/IDITE20250630193147045449/detail/0df98805_89002bfb5c998ee.webp" },
+            { id: "36", name: "Hazelnut Dutch Choco", originalPrice: 28000, promoPrice: 17000, brand: "Kopi Kenangan", image: "https://food-cms.grab.com/compressed_webp/items/IDITE20250630193150086778/detail/eeb3ea66_480ec21d725419f.webp" },
+            { id: "37", name: "Lemon Black Tea", originalPrice: 17000, promoPrice: 11500, brand: "Kopi Kenangan", image: "https://food-cms.grab.com/compressed_webp/items/IDITE20250630193146074669/detail/d00f8fc0_559cbb576177a27.webp" },
+            { id: "38", name: "Kenangan Milk Tea", originalPrice: 21000, promoPrice: 13500, brand: "Kopi Kenangan", image: "https://food-cms.grab.com/compressed_webp/items/IDITE20250630193148039827/detail/913c22df_7a5d83a501603ae.webp" },
+            { id: "39", name: "Milo Dinosaurus", originalPrice: 23000, promoPrice: 14500, brand: "Kopi Kenangan", image: "https://food-cms.grab.com/compressed_webp/items/IDITE20250630193150052617/detail/a01a6a96_8bdd0e248c5d36d.webp" },
+            { id: "40", name: "Oreo Shake", originalPrice: 26000, promoPrice: 16000, brand: "Kopi Kenangan", image: "https://food-cms.grab.com/compressed_webp/items/IDITE20250630193149036011/detail/f91d4201_feb994df04c4453.webp" },
+            { id: "41", name: "Raspberry Hibiscus", originalPrice: 20000, promoPrice: 13000, brand: "Kopi Kenangan", image: "https://food-cms.grab.com/compressed_webp/items/IDITE20250630193149052378/detail/7ba226ae_3d05dece9480be2.webp" },
+            { id: "42", name: "Susu Grass Jelly", originalPrice: 24000, promoPrice: 15000, brand: "Kopi Kenangan", image: "https://food-cms.grab.com/compressed_webp/items/IDITE20250630193149060970/detail/0c699bd8_168caaa10f5f95c.webp" },
+            { id: "43", name: "Thai Tea", originalPrice: 22000, promoPrice: 14000, brand: "Kopi Kenangan", image: "https://food-cms.grab.com/compressed_webp/items/IDITE20250630193146058165/detail/857d2fcd_29afeecf07a6c0a.webp" },
+            { id: "44", name: "Matcha Latte", originalPrice: 25000, promoPrice: 15500, brand: "Kopi Kenangan", image: "https://food-cms.grab.com/compressed_webp/items/IDITE20250630193148076389/detail/73f28968_165e37fca0da957.webp" },
+            { id: "45", name: "Oatside Kopi Kenangan Mantan", originalPrice: 22000, promoPrice: 14000, brand: "Kopi Kenangan", image: "https://food-cms.grab.com/compressed_webp/items/IDITE20250630193109043175/detail/796b24e6_616d14a5728d1ff.webp" },
+            { id: "46", name: "Oatside Latte", originalPrice: 25000, promoPrice: 15500, brand: "Kopi Kenangan", image: "https://food-cms.grab.com/compressed_webp/items/IDITE20250630193109060320/detail/ced81934_3fd8d7f1e3af821.webp" },
+            { id: "47", name: "Oatsside Matcha Latte", originalPrice: 25000, promoPrice: 15500, brand: "Kopi Kenangan", image: "https://food-cms.grab.com/compressed_webp/items/IDITE20250630193109021326/detail/281a5a15_dbfc6e9ff734f3c.webp" },
+            { id: "48", name: "Pistachio Frappe", originalPrice: 32000, promoPrice: 19000, brand: "Kopi Kenangan", image: "https://food-cms.grab.com/compressed_webp/items/IDITE20250922193527045371/detail/516352d3_47da80764322449.webp" },
+            { id: "49", name: "Butterscotch Kenangan Frape", originalPrice: 30000, promoPrice: 18000, brand: "Kopi Kenangan", image: "https://food-cms.grab.com/compressed_webp/items/IDITE20250701082015016768/detail/63a3f71e_c158a0c20395877.webp" },
+            { id: "50", name: "Matcha Kenangan Frappe", originalPrice: 32000, promoPrice: 19000, brand: "Kopi Kenangan", image: "https://food-cms.grab.com/compressed_webp/items/IDITE20250701094127019837/detail/0f153e11_0676d2b60eddce1.webp" },
+            { id: "51", name: "Kopi Kenangan Mantan Frappe", originalPrice: 30000, promoPrice: 18000, brand: "Kopi Kenangan", image: "https://food-cms.grab.com/compressed_webp/items/IDITE20250701082014010059/detail/9c56be81_1e18627861ae747.webp" },
+            { id: "52", name: "Vanilla Kenangan Frappe", originalPrice: 25000, promoPrice: 15500, brand: "Kopi Kenangan", image: "https://food-cms.grab.com/compressed_webp/items/IDITE20250701082014035176/detail/f4c784b7_8915c14d7b17582.webp" },
+            { id: "53", name: "Dutch Choco Kenangan Frappe", originalPrice: 29000, promoPrice: 17500, brand: "Kopi Kenangan", image: "https://food-cms.grab.com/compressed_webp/items/IDITE20250630193136043965/detail/ea2dbc86_126e1df53b45103.webp" },
+            { id: "54", name: "Bambang Choco Cheese Toast", originalPrice: 17000, promoPrice: 11500, brand: "Kopi Kenangan", image: "https://i.gojekapi.com/darkroom/gofood-indonesia/v2/images/uploads/66499e2e-b9c8-42f4-a32e-296fc8639792_9bcefd8c-c6d2-0bf3-cd8b-d58b53b7c107.png?auto=format" },
+            { id: "55", name: "Adam Ayam Toast", originalPrice: 19000, promoPrice: 12500, brand: "Kopi Kenangan", image: "https://i.gojekapi.com/darkroom/gofood-indonesia/v2/images/uploads/5401f48a-01c5-4981-88aa-f3c1724e75e2_fb8f8b0c-b019-3c84-87a5-753cb136b32f.png?auto=format" },
+            { id: "56", name: "Wahyu Sapi Toast", originalPrice: 19000, promoPrice: 12500, brand: "Kopi Kenangan", image: "https://i.gojekapi.com/darkroom/gofood-indonesia/v2/images/uploads/605c7f65-d7ec-4568-9ea0-3650bb92546e_f8688c41-22fd-a3a2-836f-7491a183eda0.png?auto=format" },
+            { id: "57", name: "Butter Croissant", originalPrice: 15000, promoPrice: 10500, brand: "Kopi Kenangan", image: "https://i.gojekapi.com/darkroom/gofood-indonesia/v2/images/uploads/db92aac9-45b6-4d34-8c80-8376eaaf873c_9d55c3c9-52d8-ba1d-93f0-d3463fccf78c.png?auto=format" },
+            { id: "58", name: "Chocolate Croissant", originalPrice: 19000, promoPrice: 12500, brand: "Kopi Kenangan", image: "https://i.gojekapi.com/darkroom/gofood-indonesia/v2/images/uploads/76d0d5df-9a62-49fa-b65e-8ca8d63a6a4d_91b9e718-9857-2d5c-644a-f5bc8624ebeb.png?auto=format" },
+            { id: "59", name: "Chocolate Donut", originalPrice: 13000, promoPrice: 9500, brand: "Kopi Kenangan", image: "" },
+            { id: "60", name: "Sugar Donut", originalPrice: 10000, promoPrice: 8000, brand: "Kopi Kenangan", image: "" },
+            { id: "61", name: "Cheese Donut", originalPrice: 15000, promoPrice: 10500, brand: "Kopi Kenangan", image: "" },
+            { id: "62", name: "Roti Coklat Klasik", originalPrice: 9000, promoPrice: 7500, brand: "Kopi Kenangan", image: "https://i.gojekapi.com/darkroom/gofood-indonesia/v2/images/uploads/a638a121-fe33-46e8-8a90-abd75706c1ec_9e12c70d-aa2b-5e0e-aebe-70e0ea1ebfd9.png?auto=format" },
+            { id: "63", name: "Roti Susu Manis", originalPrice: 9000, promoPrice: 7500, brand: "Kopi Kenangan", image: "https://i.gojekapi.com/darkroom/gofood-indonesia/v2/images/uploads/396da488-0f99-4e03-9e4d-a60c2c979074_33396a34-db50-f763-4f98-7ec86de19e27.png?auto=format" },
+            { id: "64", name: "Roti Keju Manis", originalPrice: 12000, promoPrice: 9000, brand: "Kopi Kenangan", image: "https://i.gojekapi.com/darkroom/gofood-indonesia/v2/images/uploads/72acff80-65d0-4ccb-8018-c6abb90e76da_4d56bebd-84b0-00e6-34d0-2a7f4bbd7003.png?auto=format" },
+            { id: "65", name: "Roti Srikaya", originalPrice: 15000, promoPrice: 10500, brand: "Kopi Kenangan", image: "https://i.gojekapi.com/darkroom/gofood-indonesia/v2/images/uploads/bb7f1969-adf1-4402-b565-871903609693_dbf90a98-0acd-2f08-0505-b83f77186496.png?auto=format" },
+            { id: "66", name: "Choco Chip Cookies", originalPrice: 14000, promoPrice: 10000, brand: "Kopi Kenangan", image: "https://i.gojekapi.com/darkroom/gofood-indonesia/v2/images/uploads/26fda6fc-f6aa-4fc0-b6e6-304be6c3c38a_e4d2e3fc-27e8-c6b3-8746-363e0e135588.png?auto=format" },
+            { id: "67", name: "Join the Dark Side Cookie", originalPrice: 21000, promoPrice: 13500, brand: "Kopi Kenangan", image: "https://i.gojekapi.com/darkroom/gofood-indonesia/v2/images/uploads/abce5af0-e7d7-4699-b2ab-efaed6f3ac45_9e36632a-bf36-8360-39f7-91b3c733e5d4.png?auto=format" },
+            { id: "68", name: "Friend Chip Cookie", originalPrice: 17000, promoPrice: 11500, brand: "Kopi Kenangan", image: "https://i.gojekapi.com/darkroom/gofood-indonesia/v2/images/uploads/056f4a54-9897-438c-8439-8924ce1aec37_31f64dbd-4d3f-10a9-f95e-ecc735c98dba.png?auto=format" },
+            { id: "69", name: "Pasta Mentai", originalPrice: 24000, promoPrice: 15000, brand: "Kopi Kenangan", image: "https://i.gojekapi.com/darkroom/gofood-indonesia/v2/images/uploads/fb629113-34ef-4ea0-923f-9f6a81681b9b_cfc504ae-2cd8-641d-a09d-b8e8426e43bf.png?auto=format" },
+            { id: "70", name: "Pasta Indoghetti", originalPrice: 22000, promoPrice: 14000, brand: "Kopi Kenangan", image: "https://food-cms.grab.com/compressed_webp/items/IDITE20251212052608012601/detail/505f058b_303643db99c0fa4.webp" },
+            { id: "71", name: "Chicken Japanese Curry  Rice", originalPrice: 24000, promoPrice: 15000, brand: "Kopi Kenangan", image: "https://food-cms.grab.com/compressed_webp/items/IDITE20251212052609023189/detail/80161efd_ba6140742e7b7b3.webp" },
+            { id: "72", name: "Chicken Pad Kra Pao Rice", originalPrice: 22000, promoPrice: 14000, brand: "Kopi Kenangan", image: "https://food-cms.grab.com/compressed_webp/items/IDITE20251212052608024725/detail/0cd18658_ece4248728d730c.webp" },
+            { id: "73", name: "Donut Almond", originalPrice: 13000, promoPrice: 9500, brand: "Kopi Kenangan", image: "https://food-cms.grab.com/compressed_webp/items/IDITE20251026192736057926/detail/64396cd2_5c4c2f7b87a6748.webp" },
+            { id: "74", name: "Sandwich Smoked Beef and Cheese", originalPrice: 21000, promoPrice: 13500, brand: "Kopi Kenangan", image: "https://food-cms.grab.com/compressed_webp/items/IDITE20251119052648012618/detail/d2d27f4c_18e44164b148568.webp" },
+            { id: "75", name: "Sandwich Chicken Tartar", originalPrice: 21000, promoPrice: 13500, brand: "Kopi Kenangan", image: "https://food-cms.grab.com/compressed_webp/items/IDITE20251119052649019190/detail/653da70a_2ddbbcee926d573.webp" },
+            { id: "76", name: "Canele Original", originalPrice: 13000, promoPrice: 9500, brand: "Kopi Kenangan", image: "https://food-cms.grab.com/compressed_webp/items/IDITE20251211192434026758/detail/f3748a41_319e31bd7ec6b3f.webp" },
+            { id: "77", name: "Canele Toffee Nut Crumble", originalPrice: 15000, promoPrice: 10500, brand: "Kopi Kenangan", image: "https://food-cms.grab.com/compressed_webp/items/IDITE20251211192433012142/detail/94793536_6425ab37b5ac942.webp" },
+            { id: "78", name: "Donut Abon", originalPrice: 13000, promoPrice: 9500, brand: "Kopi Kenangan", image: "" },
+            { id: "79", name: "Croissant Abon", originalPrice: 17000, promoPrice: 11500, brand: "Kopi Kenangan", image: "https://food-cms.grab.com/compressed_webp/items/IDITE20251211192433021856/detail/9c7d5034_00dce96fec491e6.webp" },
 
-        { id: "1", name: "Chocolate", originalPrice: 21000, promoPrice: 13500, brand: "Tomoro Coffee", image: "https://i.imgur.com/xer345o.png" },
-        { id: "2", name: "Chocolate Frappe", originalPrice: 24000, promoPrice: 15000, brand: "Tomoro Coffee", image: "https://i.imgur.com/xer345o.png" },
-        { id: "3", name: "Matcha Latte", originalPrice: 27000, promoPrice: 16500, brand: "Tomoro Coffee", image: "https://i.imgur.com/xer345o.png" },
-        { id: "4", name: "Matcha Frappe", originalPrice: 27000, promoPrice: 16500, brand: "Tomoro Coffee", image: "https://i.imgur.com/xer345o.png" },
-        { id: "5", name: "Choco Oat Latte", originalPrice: 28000, promoPrice: 17000, brand: "Tomoro Coffee", image: "https://i.imgur.com/xer345o.png" },
-        { id: "6", name: "Matcha Oat Latte", originalPrice: 28000, promoPrice: 17000, brand: "Tomoro Coffee", image: "https://i.imgur.com/xer345o.png" },
-        { id: "7", name: "Hojicha Oat Latte", originalPrice: 30000, promoPrice: 18000, brand: "Tomoro Coffee", image: "https://i.imgur.com/xer345o.png" },
-        { id: "8", name: "Coconut Choco", originalPrice: 23000, promoPrice: 14500, brand: "Tomoro Coffee", image: "https://i.imgur.com/xer345o.png" },
-        { id: "9", name: "Caramel Cheese Latte", originalPrice: 26000, promoPrice: 16000, brand: "Tomoro Coffee", image: "https://i.imgur.com/xer345o.png" },
-        { id: "10", name: "Cheese Cloud Latte", originalPrice: 26000, promoPrice: 16000, brand: "Tomoro Coffee", image: "https://i.imgur.com/xer345o.png" },
-        { id: "11", name: "TOMORO Coconut Latte", originalPrice: 23000, promoPrice: 14500, brand: "Tomoro Coffee", image: "https://i.imgur.com/xer345o.png" },
-        { id: "12", name: "Caffe Latte", originalPrice: 24000, promoPrice: 15000, brand: "Tomoro Coffee", image: "https://i.imgur.com/xer345o.png" },
-        { id: "13", name: "Cappuccino", originalPrice: 24000, promoPrice: 15000, brand: "Tomoro Coffee", image: "https://i.imgur.com/xer345o.png" },
-        { id: "14", name: "Caffe Mocha", originalPrice: 25000, promoPrice: 15500, brand: "Tomoro Coffee", image: "https://i.imgur.com/xer345o.png" },
-        { id: "15", name: "Coconut Aren Latte", originalPrice: 25000, promoPrice: 15500, brand: "Tomoro Coffee", image: "https://i.imgur.com/xer345o.png" },
-        { id: "16", name: "Caramel Macchiato", originalPrice: 26000, promoPrice: 16000, brand: "Tomoro Coffee", image: "https://i.imgur.com/xer345o.png" },
-        { id: "17", name: "Manuka Oat Latte", originalPrice: 30000, promoPrice: 18000, brand: "Tomoro Coffee", image: "https://i.imgur.com/xer345o.png" },
-        { id: "18", name: "Limitless Sky Blue Latte", originalPrice: 30000, promoPrice: 18000, brand: "Tomoro Coffee", image: "https://i.imgur.com/xer345o.png" },
-        { id: "19", name: "Rosy Hibiscus Lemonade", originalPrice: 30000, promoPrice: 18000, brand: "Tomoro Coffee", image: "https://i.imgur.com/xer345o.png" },
-        { id: "20", name: "Sea Salt Matcha Garden", originalPrice: 30000, promoPrice: 18000, brand: "Tomoro Coffee", image: "https://i.imgur.com/xer345o.png" },
-        { id: "21", name: "Sea Salt Cloud Chocolate", originalPrice: 28000, promoPrice: 17000, brand: "Tomoro Coffee", image: "https://i.imgur.com/xer345o.png" },
-        { id: "22", name: "Sea Salt Cloud Matcha Latte", originalPrice: 30000, promoPrice: 18000, brand: "Tomoro Coffee", image: "https://i.imgur.com/xer345o.png" },
-        { id: "23", name: "Coffee Frappe", originalPrice: 24000, promoPrice: 15000, brand: "Tomoro Coffee", image: "https://i.imgur.com/xer345o.png" },
-        { id: "24", name: "Caffe Mocha Frappe", originalPrice: 25000, promoPrice: 15500, brand: "Tomoro Coffee", image: "https://i.imgur.com/xer345o.png" },
-        { id: "25", name: "Aren Latte Frappe", originalPrice: 25000, promoPrice: 15500, brand: "Tomoro Coffee", image: "https://i.imgur.com/xer345o.png" },
-        { id: "26", name: "Oat Aren Frappe", originalPrice: 27000, promoPrice: 16500, brand: "Tomoro Coffee", image: "https://i.imgur.com/xer345o.png" },
-        { id: "27", name: "Coconut Aren Frappe", originalPrice: 26000, promoPrice: 16000, brand: "Tomoro Coffee", image: "https://i.imgur.com/xer345o.png" },
-        { id: "28", name: "TOMORO Aren Latte", originalPrice: 20000, promoPrice: 13000, brand: "Tomoro Coffee", image: "https://i.imgur.com/xer345o.png" },
-        { id: "29", name: "TOMORO Oat Latte", originalPrice: 24000, promoPrice: 15000, brand: "Tomoro Coffee", image: "https://i.imgur.com/xer345o.png" },
-        { id: "30", name: "Breve Latte", originalPrice: 30000, promoPrice: 18000, brand: "Tomoro Coffee", image: "https://i.imgur.com/xer345o.png" },
-        { id: "31", name: "Cheese Cloud Chocolate", originalPrice: 26000, promoPrice: 16000, brand: "Tomoro Coffee", image: "https://i.imgur.com/xer345o.png" },
-        { id: "32", name: "Sea Salt Cloud Caramel Macchiato", originalPrice: 30000, promoPrice: 18000, brand: "Tomoro Coffee", image: "https://i.imgur.com/xer345o.png" },
+            // --- TOMORO COFFEE (ID 101 - DST) -- DIUBAH SUPAYA TIDAK BENTROK ID NYA ---
+            { id: "101", name: "Chocolate", originalPrice: 21000, promoPrice: 13500, brand: "Tomoro Coffee", image: "https://i.imgur.com/xer345o.png" },
+            { id: "102", name: "Chocolate Frappe", originalPrice: 24000, promoPrice: 15000, brand: "Tomoro Coffee", image: "https://i.imgur.com/xer345o.png" },
+            { id: "103", name: "Matcha Latte", originalPrice: 27000, promoPrice: 16500, brand: "Tomoro Coffee", image: "https://i.imgur.com/xer345o.png" },
+            { id: "104", name: "Matcha Frappe", originalPrice: 27000, promoPrice: 16500, brand: "Tomoro Coffee", image: "https://i.imgur.com/xer345o.png" },
+            { id: "105", name: "Choco Oat Latte", originalPrice: 28000, promoPrice: 17000, brand: "Tomoro Coffee", image: "https://i.imgur.com/xer345o.png" },
+            { id: "106", name: "Matcha Oat Latte", originalPrice: 28000, promoPrice: 17000, brand: "Tomoro Coffee", image: "https://i.imgur.com/xer345o.png" },
+            { id: "107", name: "Hojicha Oat Latte", originalPrice: 30000, promoPrice: 18000, brand: "Tomoro Coffee", image: "https://i.imgur.com/xer345o.png" },
+            { id: "108", name: "Coconut Choco", originalPrice: 23000, promoPrice: 14500, brand: "Tomoro Coffee", image: "https://i.imgur.com/xer345o.png" },
+            { id: "109", name: "Caramel Cheese Latte", originalPrice: 26000, promoPrice: 16000, brand: "Tomoro Coffee", image: "https://i.imgur.com/xer345o.png" },
+            { id: "110", name: "Cheese Cloud Latte", originalPrice: 26000, promoPrice: 16000, brand: "Tomoro Coffee", image: "https://i.imgur.com/xer345o.png" },
+            { id: "111", name: "TOMORO Coconut Latte", originalPrice: 23000, promoPrice: 14500, brand: "Tomoro Coffee", image: "https://i.imgur.com/xer345o.png" },
+            { id: "112", name: "Caffe Latte", originalPrice: 24000, promoPrice: 15000, brand: "Tomoro Coffee", image: "https://i.imgur.com/xer345o.png" },
+            { id: "113", name: "Cappuccino", originalPrice: 24000, promoPrice: 15000, brand: "Tomoro Coffee", image: "https://i.imgur.com/xer345o.png" },
+            { id: "114", name: "Caffe Mocha", originalPrice: 25000, promoPrice: 15500, brand: "Tomoro Coffee", image: "https://i.imgur.com/xer345o.png" },
+            { id: "115", name: "Coconut Aren Latte", originalPrice: 25000, promoPrice: 15500, brand: "Tomoro Coffee", image: "https://i.imgur.com/xer345o.png" },
+            { id: "116", name: "Caramel Macchiato", originalPrice: 26000, promoPrice: 16000, brand: "Tomoro Coffee", image: "https://i.imgur.com/xer345o.png" },
+            { id: "117", name: "Manuka Oat Latte", originalPrice: 30000, promoPrice: 18000, brand: "Tomoro Coffee", image: "https://i.imgur.com/xer345o.png" },
+            { id: "118", name: "Limitless Sky Blue Latte", originalPrice: 30000, promoPrice: 18000, brand: "Tomoro Coffee", image: "https://i.imgur.com/xer345o.png" },
+            { id: "119", name: "Rosy Hibiscus Lemonade", originalPrice: 30000, promoPrice: 18000, brand: "Tomoro Coffee", image: "https://i.imgur.com/xer345o.png" },
+            { id: "120", name: "Sea Salt Matcha Garden", originalPrice: 30000, promoPrice: 18000, brand: "Tomoro Coffee", image: "https://i.imgur.com/xer345o.png" },
+            { id: "121", name: "Sea Salt Cloud Chocolate", originalPrice: 28000, promoPrice: 17000, brand: "Tomoro Coffee", image: "https://i.imgur.com/xer345o.png" },
+            { id: "122", name: "Sea Salt Cloud Matcha Latte", originalPrice: 30000, promoPrice: 18000, brand: "Tomoro Coffee", image: "https://i.imgur.com/xer345o.png" },
+            { id: "123", name: "Coffee Frappe", originalPrice: 24000, promoPrice: 15000, brand: "Tomoro Coffee", image: "https://i.imgur.com/xer345o.png" },
+            { id: "124", name: "Caffe Mocha Frappe", originalPrice: 25000, promoPrice: 15500, brand: "Tomoro Coffee", image: "https://i.imgur.com/xer345o.png" },
+            { id: "125", name: "Aren Latte Frappe", originalPrice: 25000, promoPrice: 15500, brand: "Tomoro Coffee", image: "https://i.imgur.com/xer345o.png" },
+            { id: "126", name: "Oat Aren Frappe", originalPrice: 27000, promoPrice: 16500, brand: "Tomoro Coffee", image: "https://i.imgur.com/xer345o.png" },
+            { id: "127", name: "Coconut Aren Frappe", originalPrice: 26000, promoPrice: 16000, brand: "Tomoro Coffee", image: "https://i.imgur.com/xer345o.png" },
+            { id: "128", name: "TOMORO Aren Latte", originalPrice: 20000, promoPrice: 13000, brand: "Tomoro Coffee", image: "https://i.imgur.com/xer345o.png" },
+            { id: "129", name: "TOMORO Oat Latte", originalPrice: 24000, promoPrice: 15000, brand: "Tomoro Coffee", image: "https://i.imgur.com/xer345o.png" },
+            { id: "130", name: "Breve Latte", originalPrice: 30000, promoPrice: 18000, brand: "Tomoro Coffee", image: "https://i.imgur.com/xer345o.png" },
+            { id: "131", name: "Cheese Cloud Chocolate", originalPrice: 26000, promoPrice: 16000, brand: "Tomoro Coffee", image: "https://i.imgur.com/xer345o.png" },
+            { id: "132", name: "Sea Salt Cloud Caramel Macchiato", originalPrice: 30000, promoPrice: 18000, brand: "Tomoro Coffee", image: "https://i.imgur.com/xer345o.png" },
 
         ];
 
@@ -192,6 +194,7 @@
         
         // 1. Buka Popup
         function openProductPopup(productId) {
+            // Karena ID sudah unik (Kopi Kenangan 1-99, Tomoro 101+), fungsi find aman.
             const product = products.find(p => p.id === productId);
             if (product) {
                 state.activeProduct = product;
@@ -215,13 +218,13 @@
         function confirmAddToCart() {
             if (!state.activeProduct) return;
 
-            // --- PROTEKSI BRAND ---
+            // --- PROTEKSI BRAND (Fix: Logic ini sekarang bekerja karena ID sudah unik) ---
             if (state.cart.length > 0) {
                 const currentBrand = state.cart[0].brand; // Brand yang sedang ada di keranjang
                 const newBrand = state.activeProduct.brand; // Brand yang mau dimasukkan
                 
                 if (currentBrand !== newBrand) {
-                    alert(`Maaf Kak, keranjangmu saat ini berisi produk ${currentBrand}.\n\nMohon checkout dulu atau kosongkan keranjang jika ingin memesan menu ${newBrand}.`);
+                    alert(`Maaf Kak, keranjangmu saat ini berisi produk ${currentBrand}.\n\nMohon checkout dulu atau hapus keranjang jika ingin memesan menu ${newBrand}.`);
                     return; // Batalkan proses
                 }
             }
@@ -240,7 +243,6 @@
             }
 
             state.activeProduct = null; // Tutup popup
-            // Tidak otomatis buka keranjang (biar bisa belanja lagi)
             render();
         }
 
@@ -249,18 +251,18 @@
             render();
         }
 
-        // --- WHATSAPP LOGIC UPDATE ---
+        // --- WHATSAPP LOGIC UPDATE (FIX: JUDUL OTOMATIS) ---
         function handleWhatsAppOrder() {
             if (!state.storeLocation.trim()) {
                 alert('Mohon isi lokasi cabang pengambilan');
                 return;
             }
 
-            // Ambil nama brand dari item pertama di keranjang
+            // Ambil nama brand dari item pertama di keranjang (karena sekarang keranjang pasti 1 brand)
             const orderBrand = state.cart.length > 0 ? state.cart[0].brand : 'Pesanan';
 
             let message = '*HAI YASIF MAU ORDER DONG (∩˃o˂∩)*\n';
-            message += `*Orderan: ${orderBrand}*\n\n`; // <--- Header Brand Otomatis
+            message += `*Orderan: ${orderBrand}*\n\n`; // <--- Header Brand Otomatis Berubah
             
             state.cart.forEach(item => {
                 message += `• ${item.name} (${item.quantity}x)\n`;
